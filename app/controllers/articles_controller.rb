@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
   
   def show
     set_article
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
   
   def new
