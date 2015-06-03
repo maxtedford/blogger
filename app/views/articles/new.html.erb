@@ -2,11 +2,17 @@
 
 <h1>Go right ahead, create a new article!</h1>
 
-<%= form_for(@articles) do |a| %>
+<ul>
+  <% @article.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<%= form_for(@article) do |a| %>
   <%= a.label :title %>
   <%= a.text_field :title %>
   <%= a.label :body %>
-  <%= a.text_field :body %>
+  <%= a.text_area :body %>
   <%= a.submit %>
 <% end %>
 
