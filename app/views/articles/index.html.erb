@@ -4,7 +4,7 @@
 
 <ol>
   <% @articles.each do |article| %>
-    <li><h4><%= link_to article.title, article_path(article) %></h4><br><%= article.body %><br><%= button_to "Delete Article", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %></li>
+    <li><h4><%= link_to article.title, article_path(article) %></h4><br><%= article.body %><br><%= button_to "Edit", edit_article_path(article), method: :get %><br><%= button_to "Delete Article", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %></li>
   <% end %>
 </ol>
 
