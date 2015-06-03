@@ -1,0 +1,13 @@
+<body>
+
+<h1>Go right ahead, create a new article!</h1>
+
+<%= form_for(@articles) do |a| %>
+  <%= a.label :title %>
+  <%= a.text_field :title %>
+  <%= a.label :body %>
+  <%= a.text_field :body %>
+  <%= a.submit %>
+<% end %>
+
+</body>
