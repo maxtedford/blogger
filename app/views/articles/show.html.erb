@@ -2,7 +2,11 @@
 
 <h1><%= @article.title %></h1>
 
-<h3><%= @article.body %></h3>
+<p><%= @article.body %></p>
+
+<h3>Comments:</h3>
+
+<%= render partial: "articles/comment", collection: @article.comments %>
 
 <%= button_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
 <br>
