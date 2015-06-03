@@ -5,8 +5,8 @@
 <h3><%= @article.body %></h3>
 
 <%= button_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
-</br>
-</br>
+<br>
+<br>
 <%= link_to "<< Back to Articles List", articles_path %>
 
 </body>
