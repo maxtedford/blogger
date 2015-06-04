@@ -4,14 +4,21 @@
   <% end %>
 </ul>
 
-<%= form_for(@article) do |a| %>
+<%= form_for(@article, html: {multipart: true}) do |a| %>
   <%= a.label :title %>
   <%= a.text_field :title %>
   <%= a.label :body %>
   <%= a.text_area :body %>
-  <%= a.submit %>
   <p>
-  <%= a.label :tag_list %><br />
+  <%= a.label :tag_list %><br/>
   <%= a.text_field :tag_list %>
+  </p>
+  <% if @article.image.exists? %>
+    <%= image_tag @article.image.url %><br/>
+  <% end %>
+  <%= a.label :image, "Attach a New Image" %><br />
+  <%= a.file_field :image %>
+  <p>
+  <%= a.submit %>
   </p>
 <% end %>
